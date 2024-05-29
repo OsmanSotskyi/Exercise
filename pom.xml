@@ -41,7 +41,7 @@
                     <version>2.16</version>
                     <configuration>
                         <includes>
-                            <exclude>**/*Runner.java</exclude>
+                            <exclude>**/*RegressionRunner.java</exclude>
                             <exclude>**/*Test.java</exclude>
                         </includes>
                     </configuration>

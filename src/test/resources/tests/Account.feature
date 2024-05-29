@@ -3,19 +3,20 @@ Feature: Account statement
   Background:
     Given Account exists for Acc No. "12345678" with Name "Bob Smith"
     And deposits are made
-      | INIT | 200 |
-      | DEP1 | 100 |
-      | DEP2 | 450 |
-      | DEP3 | 50  |
-    And withdrawls are made
-      | CHQ001 | 675.55 |
+      | type  | amount |
+      | INIT  | 200    |
+      | DEP1  | 100    |
+      | DEP2  | 450    |
+      | DEP3  | 50     |
+    And withdrawals are made
+      | type  | amount |
+      | CHQ001| 675.55 |
     When statement is produced
-
 
   @regression
   Scenario: Statement includes account details
     Then statement includes "Name: Bob Smith"
-    * statement includes "Account: 12345678"
+    And statement includes "Account: 12345678"
 
   @regression
   Scenario: Balance is calculated on the statement
@@ -24,7 +25,7 @@ Feature: Account statement
   @regression
   Scenario: Statement includes transaction details
     Then statement includes "INIT"
-    * statement includes "DEP1"
-    * statement includes "DEP2"
-    * statement includes "DEP3"
-    * statement includes "CHQ001"
+    And statement includes "DEP1"
+    And statement includes "DEP2"
+    And statement includes "DEP3"
+    And statement includes "CHQ001"
