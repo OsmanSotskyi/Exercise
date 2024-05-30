@@ -22,7 +22,7 @@ public class Words {
             }
 
             List<String> uniqueWordsList = new ArrayList<>(uniqueWordsSet);
-            
+
             return uniqueWordsList;
         }
     }

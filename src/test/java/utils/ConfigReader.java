@@ -24,8 +24,7 @@ public class ConfigReader {
     }
 
     public static String getPropertyValue(String key){
-        //from prop object we are calling get property method
-        // and we will pass the key to fetch the value
+
         return prop.getProperty(key);
     }
 }
